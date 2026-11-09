@@ -4,7 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-import siteConfiguration from './.figma/make/site.json'
+// Figma Make stores site metadata in .figma/make/site.json, which isn't included
+// when the project is exported. Fall back to defaults so builds work without it.
+const siteConfigPath = path.resolve(__dirname, '.figma/make/site.json')
+const siteConfiguration: FigmaSiteConfiguration = fs.existsSync(siteConfigPath)
+  ? JSON.parse(fs.readFileSync(siteConfigPath, 'utf8'))
+  : { title: 'Eco-Nnection Waste Management' }
 
 
 // Vite config — https://vitejs.dev/config/

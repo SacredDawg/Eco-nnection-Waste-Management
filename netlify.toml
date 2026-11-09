@@ -1,0 +1,11 @@
+# The app lives in a subdirectory exported from Figma Make.
+[build]
+  base = "Eco-Nnection Waste Management Website"
+  command = "pnpm install --frozen-lockfile=false && pnpm build"
+  publish = "dist"
+
+# Single-page app: serve index.html for client-side routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
