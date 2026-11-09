@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "DM Serif Display", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #f8f7f1;
+    color: #17352a;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid rgba(47, 139, 98, 0.28);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .section-label {
+    color: #2f7656;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .form-label {
+    display: grid;
+    gap: 0.5rem;
+    color: #254b3b;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .form-label input,
+  .form-label select,
+  .form-label textarea {
+    width: 100%;
+    border: 1px solid rgba(23, 53, 42, 0.14);
+    border-radius: 0.85rem;
+    background: white;
+    padding: 0.8rem 0.95rem;
+    color: #17352a;
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline: none;
+  }
+
+  .form-label input:focus,
+  .form-label select:focus,
+  .form-label textarea:focus {
+    border-color: #2f8b62;
+    box-shadow: 0 0 0 3px rgba(47, 139, 98, 0.1);
+  }
+}
+
+.eco-grid {
+  background-image:
+    linear-gradient(rgba(31, 107, 75, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 107, 75, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+::selection {
+  background: #f4c95d;
+  color: #17352a;
+}
