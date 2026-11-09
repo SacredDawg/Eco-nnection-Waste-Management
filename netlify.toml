@@ -1,0 +1,4 @@
+[build]
+  base = "Eco-Nnection Waste Management Website"
+  command = "pnpm install --frozen-lockfile && pnpm build"
+  publish = "dist"
